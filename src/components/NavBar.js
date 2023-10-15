@@ -10,7 +10,7 @@ export default function NavBar() {
   return (
     <div className="d-flex gap-4 p-4 align-items-center">
                     <p className='mb-0'>User Dashboard</p>
-                    {state.isAuth ? <><p>Welcome {state.userName}</p> <button className='btn btn-danger' onClick={()=>{
+                    {state.isAuth ? <><p className='mb-0'>Welcome {state.userName}</p> <button className='btn btn-danger' onClick={()=>{
                       dispatch(logOut())
                       redirect('/')
                     }} >Logout</button></>: <>
