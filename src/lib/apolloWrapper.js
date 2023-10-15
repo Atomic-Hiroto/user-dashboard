@@ -1,7 +1,6 @@
 "use client";
 
 import {
-  ApolloClient,
   ApolloLink,
   HttpLink,
 } from "@apollo/client";
@@ -14,7 +13,7 @@ import {
 
 function makeClient() {
   const httpLink = new HttpLink({
-      uri: process.env.NEXT_APOLLO_URI,
+      uri: "https://brown-swallow-shoe.cyclic.app",
   });
 
   return new NextSSRApolloClient({

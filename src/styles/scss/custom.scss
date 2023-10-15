@@ -6,6 +6,11 @@
 @import "../../../node_modules/bootstrap/scss/bootstrap";
 
 // Then add additional custom code here
-main{
+
+body{
+    margin: 0;
+    background-color: #232323;
+    color: white;
     height: 100vh;
 }
+
