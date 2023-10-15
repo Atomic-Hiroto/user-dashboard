@@ -1,13 +1,14 @@
 "use client"
-import { protect } from "@/lib/protect";
 import { useRouter } from "next/navigation";
+import { useSelector } from "react-redux";
 
 export default function ProtectedLayout({ children }) {
     const router = useRouter();
-    if (!protect()) {
+    const isAuth = useSelector(state => state.authReducer.isAuth);
+    if (!isAuth) {
         router.push("/");
         return null;
     } else {
-        return { children };
+        return children;
     }
 }

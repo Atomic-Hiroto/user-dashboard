@@ -2,8 +2,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  loggedIn:false,
-  userName:""
+  isAuth:true,
+  userName:"",
+  following:[]
 }
 
 export const authSlice = createSlice({
@@ -11,7 +12,7 @@ export const authSlice = createSlice({
   initialState,
   reducers: {
     logIn: (state) => {
-      state.loggedIn = true;
+      state.isAuth = true;
     },
     logOut: (state) => {
         return initialState
@@ -19,10 +20,13 @@ export const authSlice = createSlice({
     setUsername: (state, action) => {
       state.userName = action.payload
     },
+    addFollowing: (state, action) => {
+      state.following.push(action.payload)
+    }
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { logIn, logOut, setUsername } = authSlice.actions
+export const { logIn, logOut, setUsername, addFollowing } = authSlice.actions
 
 export default authSlice.reducer
